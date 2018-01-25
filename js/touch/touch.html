@@ -1,0 +1,48 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <div>
+        <span id="xy"></span>
+        <span id="end_xy"></span>
+        <span id="content"></span>
+    </div>
+    <script>
+        var xy = document.getElementById("xy");
+        var endxy = document.getElementById("end_xy");
+        var content = document.getElementById("content");
+        var x, y, end_x, end_y;
+        // document.addEventListener("touchstart", function (evt) {
+        //     var touch = evt.touches[0];
+        //     x = parseInt(touch.pageX),
+        //         y = parseInt(touch.pageY);
+        //     end_x = x,
+        //         end_y = y;
+        //     xy.innerHTML = x + "," + y;
+        //     content.innerHTML = "";
+        // }, false)
+        document.addEventListener("touchmove", function (evt) {
+            evt.preventDefault();
+            var touch = evt.touches[0];
+            end_x = parseInt(touch.pageX),
+                end_y = parseInt(touch.pageY);
+            xy.innerHTML = end_x + "," + end_y;
+        }, false)
+        // document.addEventListener("touchend", function (evt) {
+        //     var x_x = end_x - x;
+        //     var y_y = end_y - y;
+        //     endxy.innerHTML = x_x + "," + y_y;
+        //     document.title = "x轴移动了" + x_x + " ,y轴移动了" + y_y;
+        //     if (y_y < -50) {
+        //         content.innerHTML = "由于你向上滑动了一段距离，所以我要插入内容了";
+        //     } else {
+        //         content.innerHTML = "";
+        //     }
+        // }, false)
+    </script>
+</body>
+
+</html>
