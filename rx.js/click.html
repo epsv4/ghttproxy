@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <script src="Rx.min.js"></script>
+    </head>
+    <body>
+        <button>click me</button>
+        <script>
+var button = document.querySelector('button');
+Rx.Observable.fromEvent(button, 'click')
+  .throttleTime(1000)
+  .map(event => event.clientX)
+  .scan((count, clientX) => count + clientX, 0)
+  .subscribe(count => console.log(count));
+        </script>
+    </body>
+</html>

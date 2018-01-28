@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <style>
+        *{
+            /* margin: 0; */
+            padding: 0;
+        }
+        div#a {
+            width: 360px;
+            height: 100px;
+            background-color: aqua;
+            margin: 0 auto;
+            padding: 0;
+            border: 0;
+        }
+        .beige{
+            background-color: beige
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="b" class="beige">1</div>
+    <div id="a"></div>
+    <script>
+        window.onload = function onloaded() {
+            console.log("onloaded")
+            alert(window.innerWidth)
+            let div = document.querySelector("#b")
+            console.log(div)
+            alert(div.offsetWidth)
+            // div.style.display = 'none'
+        }
+        let viewport = document.querySelector("meta[name=viewport]")
+        console.log(viewport.content)
+        // viewport.setAttribute('content', 'initial-scale=0.5'); 
+    </script>
+</body>
+
+</html>
